@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Databases;
+use App\Models\Ijins;
 use App\Models\Kapanewons;
+use App\Models\Omzets;
 use Illuminate\Http\Request;
 
 class DatabasesController extends Controller
@@ -27,7 +29,9 @@ class DatabasesController extends Controller
     public function create()
     {
         $kapanewons = Kapanewons::all();
-        return view('databases.create', compact('kapanewons'));
+        $omzets = Omzets::all();
+        $ijins = Ijins::all();
+        return view('databases.create', compact('kapanewons', 'omzets', 'ijins'));
     }
 
     /**

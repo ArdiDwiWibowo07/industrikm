@@ -19,11 +19,11 @@
                             @csrf
 
                             <div class="form-group">
-                                <label class="font-weight-bold">JUDUL</label>
-                                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" placeholder="Masukkan Judul Post">
+                                <label class="font-weight-bold">NAMA USAHA</label>
+                                <input type="text" class="form-control @error('nama_usaha') is-invalid @enderror" name="namaUsaha" value="{{ old('nama_usaha') }}" placeholder="Masukkan Nama Usaha">
                             
                                 <!-- error message untuk title -->
-                                @error('title')
+                                @error('nama_usaha')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -31,8 +31,104 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="font-weight-bold">NAMA PEMILIK</label>
+                                <input type="text" class="form-control @error('nama_pemilik') is-invalid @enderror" name="namaPemilik" value="{{ old('nama_pemilik') }}" placeholder="Masukkan Nama Pemilik">
+                            
+                                <!-- error message untuk title -->
+                                @error('nama_pemilik')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">TELEPON</label>
+                                <input type="text" class="form-control @error('telepon') is-invalid @enderror" name="telepon" value="{{ old('telepon') }}" placeholder="Masukkan Telepon">
+                            
+                                <!-- error message untuk title -->
+                                @error('telepon')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">EMAIL</label>
+                                <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Masukkan Email">
+                            
+                                <!-- error message untuk title -->
+                                @error('email')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">ALAMAT</label>
+                                <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" value="{{ old('alamat') }}" placeholder="Masukkan Alamat">
+                            
+                                <!-- error message untuk title -->
+                                @error('alamat')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">PRODUK</label>
+                                <input type="text" class="form-control @error('produk') is-invalid @enderror" name="produk" value="{{ old('produk') }}" placeholder="Masukkan Produk">
+                            
+                                <!-- error message untuk title -->
+                                @error('produk')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="font-weight-bold">OMZET</label>
+                                    <select name="omzet" id="omzet" class="form-control">
+                                        <option value="--">Pilih Omzet</option>
+                                        @foreach($omzets as $k)
+                                        <option value="{{$k->id}}">{{$k->jenis}}</option>
+                                        @endforeach
+                                    </select>
+                            
+                                <!-- error message untuk title -->
+                                @error('omzet')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">IJIN</label>
+                                    <select name="ijin" id="ijin" class="form-control">
+                                        <option value="--">Pilih Ijin</option>
+                                        @foreach($ijins as $k)
+                                        <option value="{{$k->id}}">{{$k->ijinusaha}}</option>
+                                        @endforeach
+                                    </select>
+                            
+                                <!-- error message untuk title -->
+                                @error('ijin')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            
+
+                            <div class="form-group">
                                 <label class="font-weight-bold">Kapanewons</label>
-                                    <select name="cars" id="cars" class="form-control">
+                                    <select name="kapanewon" id="kapanewon" class="form-control">
                                         <option value="--">Pilih Kapanewons</option>
                                         @foreach($kapanewons as $k)
                                         <option value="{{$k->id}}">{{$k->kapanewon}}</option>
@@ -40,7 +136,7 @@
                                     </select>
                             
                                 <!-- error message untuk title -->
-                                @error('title')
+                                @error('kapanewon')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -48,11 +144,71 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">JUDUL</label>
-                                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" placeholder="Masukkan Judul Post">
+                                <label class="font-weight-bold">JUMLAH TENAGA KERJA</label>
+                                <input type="text" class="form-control @error('jtk') is-invalid @enderror" name="jtk" value="{{ old('jtk') }}" placeholder="Masukkan Jumlah Tenaga Kerja">
                             
                                 <!-- error message untuk title -->
-                                @error('title')
+                                @error('jtk')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">PELATIHAN/PAMERAN</label>
+                                <input type="text" class="form-control @error('pelpam') is-invalid @enderror" name="pelpam" value="{{ old('pelpam') }}" placeholder="Masukkan Pelatihan/Pameran">
+                            
+                                <!-- error message untuk title -->
+                                @error('pelpam')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">JUMLAH</label>
+                                <input type="text" class="form-control @error('jumlah') is-invalid @enderror" name="jumlah" value="{{ old('jumlah') }}" placeholder="Masukkan Jumlah">
+                            
+                                <!-- error message untuk title -->
+                                @error('jumlah')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">DESKRIPSI</label>
+                                <input type="text" class="form-control @error('desk') is-invalid @enderror" name="desk" value="{{ old('desk') }}" placeholder="Masukkan Deskripsi">
+                            
+                                <!-- error message untuk title -->
+                                @error('desk')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">MASALAH</label>
+                                <input type="text" class="form-control @error('masalah') is-invalid @enderror" name="masalah" value="{{ old('masalah') }}" placeholder="Masukkan Masalah">
+                            
+                                <!-- error message untuk title -->
+                                @error('masalah')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="font-weight-bold">KETERANGAN</label>
+                                <input type="text" class="form-control @error('ket') is-invalid @enderror" name="ket" value="{{ old('ket') }}" placeholder="Masukkan Keterangan">
+                            
+                                <!-- error message untuk title -->
+                                @error('ket')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>

@@ -16,7 +16,8 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href="{{ route('databases.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+                        <a href="{{ route('databases.create') }}" class="btn btn-md btn-success mb-3">TAMBAH DATABASE</a>
+                        <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
                               <tr>
@@ -45,6 +46,19 @@
                                     <td><?php echo $no; $no++;?></td>
                                     <td>{{ $d->nama_usaha }}</td>
                                     <td>{{ $d->nama_pemilik }}</td>
+                                    <td>{{ $d->telp }}</td>
+                                    <td>{{ $d->telp}}</td>
+                                    <td>{{ $d->email }}</td>
+                                    <td>{{ $d->alamat }}</td>
+                                    <td>{{ $d->produk }}</td>
+                                    <td>{{ $d->omzet }}</td>
+                                    <td>{{ $d->ijin }}</td>
+                                    <td>{{ $d->jtk }}</td>
+                                    <td>{{ $d->pelpam }}</td>
+                                    <td>{{ $d->jumlah }}</td>
+                                    <td>{{ $d->des }}</td>
+                                    <td>{{ $d->masalah }}</td>
+                                    <td>{{ $d->ket }}</td>
                                     <td class="text-center">
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('databases.destroy', $d->id) }}" method="POST">
                                             <a href="{{ route('databases.edit', $d->id) }}" class="btn btn-sm btn-primary">EDIT</a>
@@ -62,6 +76,7 @@
                             </tbody>
                           </table>  
                           {{ $databases->links() }}
+                        </div>
                     </div>
                 </div>
             </div>
